@@ -6,10 +6,17 @@ app.set('view engine','hbs');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req,res) => {
-    res.send('Hello Express!');
+    res.render('home.hbs',{
+        pageTitle: 'My Home Page',
+        currentYear: new Date().getFullYear(),
+        welcomeMessage: 'Welcome to my web site'
+    });
 });
 app.get('/about', (req,res)=> {
-    res.send('<h1>About</h1>The About Page');
+    res.render('about.hbs',{
+        pageTitle: 'About',
+        currentYear: new Date().getFullYear()
+    });
 })
 app.get('/bad', (req,res) => {
 
