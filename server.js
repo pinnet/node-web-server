@@ -40,6 +40,12 @@ app.get('/', (req,res) => {
         welcomeMessage: 'Welcome to my web site'
     });
 });
+app.get('/projects', (req,res) => {
+    res.render('projects.hbs',{
+        pageTitle: 'My Project Page',
+        welcomeMessage: 'Projects Page Content'
+    });
+});
 app.get('/about', (req,res)=> {
     res.render('about.hbs',{
         pageTitle: 'About',
